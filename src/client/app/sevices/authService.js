@@ -50,7 +50,7 @@
 
         function setCredentials(user) {
             if (user) {
-                if(user.roles.indexOf('ROLE_ADMINs') !== -1){
+                if(user.roles.indexOf('ROLE_ADMIN') !== -1){
                     user.role = 'administrator';
                 } else {
                     user.role = 'owner';

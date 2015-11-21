@@ -14,7 +14,7 @@
         $rootScope.loggedUser = $cookies.getObject('user');
         vm.navline = {
             title: config.appTitle,
-            text: ($rootScope.loggedUser)?$rootScope.loggedUser.username : '',
+            text: ($rootScope.loggedUser)?$rootScope.loggedUser.username : '--',
             link: '/login'
         };
 
