@@ -6,8 +6,9 @@
         .controller('ShellController', ShellController);
 
     /* @ngInject */
-    function ShellController($rootScope, $timeout, config, logger, $cookies, $state) {
+    function ShellController($rootScope, $timeout, config, logger, $cookies, $state, authService) {
         var vm = this;
+        var auth = $cookies.get('loggedIn');
         vm.busyMessage = 'Please wait ...';
         vm.isBusy = true;
         $rootScope.showSplash = true;
@@ -39,7 +40,11 @@
                 $state.go('login');
             }
 
-            routeUser($rootScope.loggedUser);
+            if(auth){
+                authService.setAuthHeader(auth);
+            }
+
+            //routeUser($rootScope.loggedUser);
         }
 
         function routeUser(user){

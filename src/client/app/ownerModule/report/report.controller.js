@@ -6,7 +6,7 @@
         .controller('oReportController', ReportController);
 
     /* @ngInject */
-    function ReportController(ngDialog) {
+    function ReportController(ngDialog, dataservice, logger) {
         var vm = this;
         vm.title = 'Sesizari';
         vm.report = {};
@@ -15,8 +15,16 @@
         vm.addPicture = addPicture;
 
         function submitReport(){
+            var reqObj = {report: vm.report};
 
-            console.log(vm.report);
+            dataservice.owners.addReport(reqObj)
+                .then(function(res){
+                    vm.report = {};
+                    logger.success('Saved!');
+                })
+                .catch(function (err){
+                    logger.error(err);
+                });
         }
 
         function addPicture() {

@@ -6,7 +6,7 @@
                     <h2>Lista locatari</h2>
                 </div>
                 <div class="col-sm-12">
-                    <button type="button" class="btn btn-sm btn-success" ng-click="vm.addNewView = true">Adauga
+                    <button type="button" class="btn btn-sm btn-success" ng-click="vm.addOwnerModal()">Adauga
                         locatar
                     </button>
                     <br/>
@@ -14,29 +14,17 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Column heading</th>
-                            <th>Column heading</th>
-                            <th>Column heading</th>
+                            <th>Nume</th>
+                            <th>Email</th>
+                            <th>Adresa</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
+                        <tr ng-repeat="item in vm.owners">
+                            <td>{{::item.id}}</td>
+                            <td>{{::item.username}}t</td>
+                            <td>{{::item.email}}</td>
+                            <td>{{::item.block}} {{::item.entrance}} {{::item.apartment}}</td>
                         </tr>
                         </tbody>
                     </table>

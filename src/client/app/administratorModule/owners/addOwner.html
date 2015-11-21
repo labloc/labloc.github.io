@@ -1,0 +1,55 @@
+<div>
+    <form class="" ng-submit="addOwner(owner)">
+        <h2 class="col-sm-12">Adauga locatar</h2>
+
+        <div class="col-sm-6">
+            <div class="form-group label-floating is-empty">
+                <label for="title" class="control-label">Nume de utilizator</label>
+                <input type="text" class="form-control" id="title" ng-model="owner.username" required>
+            </div>
+
+            <div class="form-group label-floating is-empty">
+                <label for="email" class="control-label">Email</label>
+                <input type="email" class="form-control" id="email" ng-model="owner.email" required>
+            </div>
+
+            <div class="form-group label-floating is-empty">
+                <label for="password" class="control-label">Parola</label>
+                <input type="password" class="form-control" id="password" ng-model="owner.plainPassword.first" required>
+            </div>
+
+            <div class="form-group label-floating is-empty">
+                <label for="password2" class="control-label">Repeta parola</label>
+                <input type="password" class="form-control" id="password2" ng-model="owner.plainPassword.second" required>
+            </div>
+        </div>
+        <div class="col-sm-6">
+
+            <div class="form-group label-floating is-empty">
+                <label for="bloc" class="control-label">Bloc</label>
+                <input type="text" class="form-control" id="bloc" ng-model="owner.block" required>
+            </div>
+
+            <div class="form-group label-floating is-empty">
+                <label for="entrance" class="control-label">Scara</label>
+                <input type="text" class="form-control" id="entrance" ng-model="owner.entrance" required>
+            </div>
+
+            <div class="form-group label-floating is-empty">
+                <label for="floor" class="control-label">Etaj</label>
+                <input type="text" class="form-control" id="floor" ng-model="owner.floor" required>
+            </div>
+
+            <div class="form-group label-floating is-empty">
+                <label for="apt" class="control-label">Apartament</label>
+                <input type="text" class="form-control" id="apt" ng-model="owner.apartment" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-12">
+                <button type="submit" class="btn btn-primary">TRIMITE</button>
+            </div>
+        </div>
+    </form>
+</div>

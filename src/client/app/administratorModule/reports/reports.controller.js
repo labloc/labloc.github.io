@@ -6,15 +6,22 @@
         .controller('ReportsController', ReportsController);
 
     /* @ngInject */
-    function ReportsController() {
+    function ReportsController(dataservice) {
         var vm = this;
         vm.title = 'Sesizari';
-        vm.report = {};
-        vm.submitReport = submitReport;
+        vm.reports = {};
 
-        function submitReport(){
-            debugger;
-            console.log(vm.report);
+        activate();
+
+        function activate() {
+            getReports();
+        }
+
+        function getReports() {
+            dataservice.admin.getReports()
+                .then(function (res) {
+                    vm.reports = res.reports;
+                });
         }
 
     }

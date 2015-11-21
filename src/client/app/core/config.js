@@ -32,4 +32,12 @@
         routerHelperProvider.configure({docTitle: ''});
     }
 
+
+    core.config(['ngDialogProvider', function (ngDialogProvider) {
+        ngDialogProvider.setDefaults({
+            showClose: true,
+            closeByDocument: false,
+            closeByEscape: false
+        });
+    }]);
 })();

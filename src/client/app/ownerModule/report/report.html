@@ -18,17 +18,17 @@
                         <div class="form-group label-floating is-empty">
                             <label for="title" class="control-label">Titlu</label>
                             <input type="text" class="form-control" id="title" ng-model="vm.report.title" required>
-                            <span class="help-block">Introduceti numele de utilizator</span>
+                            <span class="help-block">Introduceti titlul sesizarii</span>
                             <span class="material-input"></span>
                         </div>
                         <div class="form-group label-floating is-empty">
                             <label for="textArea" class="control-label">Detalii</label>
-                            <textarea class="form-control" rows="3" id="textArea" ng-model="vm.report.description"
+                            <textarea class="form-control" rows="3" id="textArea" ng-model="vm.report.message"
                                       required></textarea>
                             <span class="help-block">Completeaza detaliile sesizarii</span>
                         </div>
                         <div class="form-group is-empty is-fileinput">
-                            <input type="file" id="inputFile4" multiple="" accept="image/*"  ng-model="vm.report.upload">
+                            <input type="file" id="inputFile4" multiple="" accept="image/*"  ng-model="vm.report.file">
 
                             <div class="input-group">
                                 <input type="text" readonly="" class="form-control" placeholder="Ataseaza poze">

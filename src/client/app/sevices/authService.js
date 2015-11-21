@@ -10,7 +10,8 @@
         var service = {
             login: login,
             setCredentials: setCredentials,
-            clearCredentials: clearCredentials
+            clearCredentials: clearCredentials,
+            setAuthHeader: setAuthHeader
         };
 
         return service;
@@ -21,7 +22,6 @@
             $http.get(config.apiUrl + '/login')
                 .then(function (res) {
                     var user = res.data;
-                    console.log(user);
                     setCredentials(user);
                     callback(user);
                 })
@@ -36,9 +36,13 @@
             if (username && password) {
                 var authData = window.btoa(username + ':' + password);
                 $cookies.put('loggedIn', authData);
-                $http.defaults.headers.common.Authorization = 'Basic '+ authData;
-                $http.defaults.headers.common['Accept'] = 'application/json';
+                setAuthHeader(authData);
             }
+        }
+
+        function setAuthHeader(authData){
+            $http.defaults.headers.common.Authorization = 'Basic '+ authData;
+            $http.defaults.headers.common['Accept'] = 'application/json';
         }
 
         function clearCredentials() {
