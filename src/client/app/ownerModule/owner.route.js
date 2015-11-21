@@ -14,7 +14,7 @@
     function getStates() {
         return [
             {
-                state: 'owner-news',
+                state: 'owner',
                 config: {
                     url: '/owner/news',
                     templateUrl: 'app/ownerModule/news/news.html',
@@ -44,7 +44,7 @@
                 }
             },
             {
-                state: 'owner',
+                state: 'owner-report',
                 config: {
                     url: '/owner/report',
                     templateUrl: 'app/ownerModule/report/report.html',

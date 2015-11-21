@@ -21,8 +21,6 @@
                     routeUser(res);
                 }
             });
-
-
         }
 
         function routeUser(user) {

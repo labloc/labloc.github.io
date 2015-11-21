@@ -1,9 +1,91 @@
-<section id="ownerIndex-view" class="mainbar">
-    <section class="matter">
+<section id="ownerIndex-view">
+    <section class="matter centered">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    OwnerIndex
+                    <h2>Administrare index</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <br/><br/>
+                    <button type="button" class="btn btn-sm btn-success" ng-click="vm.addNewView = true">Adauga</button>
+                    <table class="table table-responsive table-striped">
+                        <thead>
+                        <tr class="text-center">
+                            <th rowspan="3">#</th>
+                            <th rowspan="3">Luna</th>
+                            <th colspan="4">Bucatarie</th>
+                            <th colspan="4">Baie mare</th>
+                            <th colspan="4">Baie mica</th>
+                            <th rowspan="3">Status</th>
+                        </tr>
+                        <tr class="text-center">
+                            <th colspan="2">AR</th>
+                            <th colspan="2">ACM</th>
+                            <th colspan="2">AR</th>
+                            <th colspan="2">ACM</th>
+                            <th colspan="2">AR</th>
+                            <th colspan="2">ACM</th>
+                        </tr>
+                        <tr>
+                            <th>index</th>
+                            <th>consum</th>
+                            <th>index</th>
+                            <th>consum</th>
+                            <th>index</th>
+                            <th>consum</th>
+                            <th>index</th>
+                            <th>consum</th>
+                            <th>index</th>
+                            <th>consum</th>
+                            <th>index</th>
+                            <th>consum</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="text-center" ng-repeat="item in vm.consumers">
+                            <td>{{$index +1}}</td>
+                            <td>{{item.month}}</td>
+                            <td>{{item.kitchen.ar.index || '-'}}</td>
+                            <td>{{item.kitchen.ar.cons || '-'}}</td>
+                            <td>{{item.kitchen.acm.index || '-'}}</td>
+                            <td>{{item.kitchen.acm.cons|| '-'}}</td>
+                            <td>{{item.bath1.ar.index || '-'}}</td>
+                            <td>{{item.bath1.ar.cons || '-'}}</td>
+                            <td>{{item.bath1.acm.index || '-'}}</td>
+                            <td>{{item.bath1.acm.cons|| '-'}}</td>
+                            <td>{{item.bath2.ar.index || '-'}}</td>
+                            <td>{{item.bath2.ar.cons || '-'}}</td>
+                            <td>{{item.bath2.acm.index || '-'}}</td>
+                            <td>{{item.bath2.acm.cons|| '-'}}</td>
+                            <td ng-if="item.status"> <span class="label label-success">{{item.status}}</span></td>
+                            <td ng-if="!item.status">
+                                <a href="#">Modifica</a>
+                            </td>
+                        </tr>
+                        <tr ng-if="vm.addNewView">
+                            <td colspan="2"><select class="form-control" ng-model="vm.new.month"
+                                                    ng-options="type for type in vm.monthsList">
+                                <option value="">----</option>
+                            </select></td>
+                            <td colspan="2"><input type="number" placeholder="index" class="form-control" ng-model="vm.new.kitchen.ar.index"/>
+                            </td>
+                            <td colspan="2"><input type="number" placeholder="index" class="form-control"
+                                                   ng-model="vm.new.kitchen.acm.index"/>
+                            </td>
+                            <td colspan="2"><input type="number" placeholder="index" class="form-control" ng-model="vm.new.bath1.ar.index"/>
+                            </td>
+                            <td colspan="2"><input type="number" placeholder="index" class="form-control" ng-model="vm.new.bath1.acm.index"/>
+                            </td>
+                            <td colspan="2"><input type="number" placeholder="index" class="form-control" ng-model="vm.new.bath2.ar.index"/>
+                            </td>
+                            <td colspan="2"><input type="number" placeholder="index" class="form-control" ng-model="vm.new.bath2.acm.index"/>
+                            </td>
+                            <td><button type="button" class="btn btn-sm btn-warning" ng-click="vm.saveIndex(vm.new)"> <i class="mdi-content-send"></i></button></td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

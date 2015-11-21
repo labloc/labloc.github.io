@@ -6,9 +6,10 @@
         .factory('dataservice', dataservice);
 
     /* @ngInject */
-    function dataservice(loginService) {
+    function dataservice(loginService, ownerService) {
         var service = {
-            loginService: loginService
+            loginService: loginService,
+            owners: ownerService
         };
 
         return service;

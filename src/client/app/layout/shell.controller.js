@@ -14,8 +14,8 @@
         $rootScope.loggedUser = $cookies.getObject('user');
         vm.navline = {
             title: config.appTitle,
-            text: 'Username',
-            link: '/profile'
+            text: ($rootScope.loggedUser)?$rootScope.loggedUser.username : '',
+            link: '/login'
         };
 
         activate();
