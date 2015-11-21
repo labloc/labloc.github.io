@@ -1,0 +1,29 @@
+<section id="login-view">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-sm-offset-4">
+                    <form class="well well-lg" ng-submit="vm.login()">
+                        <h2>La bloc</h2>
+                        <div class="form-group label-floating is-empty">
+                            <label for="username" class="control-label">Nume de utilizator</label>
+                            <input type="text" class="form-control" id="username" ng-model="vm.username" required>
+                            <span class="help-block">Introduceti numele de utilizator</span>
+                            <span class="material-input"></span>
+                        </div>
+                        <div class="form-group label-floating is-empty">
+                            <label for="password" class="control-label">Parola</label>
+                            <input type="password" class="form-control" id="password" ng-model="vm.password" required>
+                            <span class="help-block">Introduceti parola</span>
+                            <span class="material-input"></span>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">INTRA</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</section>

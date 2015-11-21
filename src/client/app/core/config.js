@@ -14,21 +14,22 @@
 
     var config = {
         appErrorPrefix: '[LaBloc Error] ',
-        appTitle: 'La Bloc'
+        appTitle: 'La Bloc',
+        //apiUrl: 'http://apilabloc.nimasoftware.com/api'
+        apiUrl: 'http://labloc.bogdan.pw/api/housingassociations'
     };
 
     core.value('config', config);
 
     core.config(configure);
 
-    configure.$inject = ['$logProvider', 'routerHelperProvider', 'exceptionHandlerProvider'];
     /* @ngInject */
     function configure($logProvider, routerHelperProvider, exceptionHandlerProvider) {
         if ($logProvider.debugEnabled) {
             $logProvider.debugEnabled(true);
         }
         exceptionHandlerProvider.configure(config.appErrorPrefix);
-        routerHelperProvider.configure({docTitle: config.appTitle + ': '});
+        routerHelperProvider.configure({docTitle: ''});
     }
 
 })();

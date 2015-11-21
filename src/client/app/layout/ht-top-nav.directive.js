@@ -19,8 +19,13 @@
         };
 
         /* @ngInject */
-        function TopNavController() {
+        function TopNavController(authService) {
             var vm = this;
+            vm.clearUser = clearUser;
+
+            function clearUser(){
+                authService.clearCredentials();
+            }
         }
 
         return directive;
