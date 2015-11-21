@@ -30,7 +30,7 @@
             if(_.isUndefined(user)) return;
 
             if (user.role === 'administrator') {
-                $state.go('administrator');
+
             } else {
                 $state.go('owner');
             }

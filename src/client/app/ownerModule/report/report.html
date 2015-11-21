@@ -6,6 +6,15 @@
                     <form class="well well-lg" ng-submit="vm.submitReport()">
                         <h2>Completeaza o sesizare</h2>
 
+                        <div class="form-group">
+
+                            <select name="singleSelect" id="singleSelect" class="form-control" ng-model="vm.report.type">
+                                <option value="">Tipul sesizarii</option>
+                                <option ng-repeat="op in vm.categories" value="{{op}}">{{op}}</option>
+                            </select>
+
+                        </div>
+
                         <div class="form-group label-floating is-empty">
                             <label for="title" class="control-label">Titlu</label>
                             <input type="text" class="form-control" id="title" ng-model="vm.report.title" required>
@@ -19,7 +28,7 @@
                             <span class="help-block">Completeaza detaliile sesizarii</span>
                         </div>
                         <div class="form-group is-empty is-fileinput">
-                            <input type="file" id="inputFile4" multiple="" accept="image/*" ng-model="vm.report.uploads">
+                            <input type="file" id="inputFile4" multiple="" accept="image/*"  ng-model="vm.report.upload">
 
                             <div class="input-group">
                                 <input type="text" readonly="" class="form-control" placeholder="Ataseaza poze">
@@ -31,8 +40,8 @@
                             </div>
                             <span class="material-input"></span></div>
                         <div class="form-group">
-                            <button type="button" class="btn btn-default">ANULEAZA</button>
                             <button type="submit" class="btn btn-primary">TRIMITE</button>
+                            <button type="button" class="btn btn-default">ANULEAZA</button>
                         </div>
                     </form>
                 </div>

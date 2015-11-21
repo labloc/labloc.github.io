@@ -15,8 +15,8 @@
     var config = {
         appErrorPrefix: '[LaBloc Error] ',
         appTitle: 'La Bloc',
-        //apiUrl: 'http://apilabloc.nimasoftware.com/api'
-        apiUrl: 'http://labloc.bogdan.pw/api/housingassociations'
+        apiUrl: 'http://apilabloc.nimasoftware.com/api'
+        //apiUrl: 'https://sheetsu.com/apis/d78b88c8'
     };
 
     core.value('config', config);

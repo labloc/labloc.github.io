@@ -18,15 +18,15 @@
         function login(username, password, callback) {
             setHeader(username, password);
 
-            return $http.get(config.apiUrl)
+            $http.get(config.apiUrl + '/login')
                 .then(function (res) {
-                    console.log(res);
-                    return;
-                    var user = res.data.result[1];
+                    var user = res.data;
+                    console.log(user);
                     setCredentials(user);
                     callback(user);
                 })
-                .catch(function () {
+                .catch(function (e) {
+                    console.log(e);
                     clearCredentials();
                 });
 
@@ -36,7 +36,8 @@
             if (username && password) {
                 var authData = window.btoa(username + ':' + password);
                 $cookies.put('loggedIn', authData);
-                $http.defaults.headers.common['Authorization'] = 'Basic ' + authData;
+                $http.defaults.headers.common.Authorization = 'Basic '+ authData;
+                $http.defaults.headers.common['Accept'] = 'application/json';
             }
         }
 
@@ -44,11 +45,17 @@
             $cookies.remove('user');
             $cookies.remove('loggedIn');
             $rootScope.loggedUser = null;
-            $http.defaults.headers.common.Authorization = 'Basic ';
+            delete $http.defaults.headers.common.Authorization;
         }
 
         function setCredentials(user) {
             if (user) {
+                if(user.roles.indexOf('ROLE_ADMINs') !== -1){
+                    user.role = 'administrator';
+                } else {
+                    user.role = 'owner';
+                }
+
                 $cookies.putObject('user',user);
                 $rootScope.loggedUser = user;
             }

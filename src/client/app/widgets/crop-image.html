@@ -1,0 +1,21 @@
+<div class="modals-content crop-modal clearfix">
+    <div class="modal-title">Choose profile picture
+    </div>
+    <div class="text-center">
+
+        <input type="file" id="fileInput" accept="image/*"/>
+        <div class="cropArea" title="Click to choose file">
+            <img-crop image="myImage" result-image="myCroppedImage"></img-crop>
+        </div>
+        <br/>
+        <div>
+            <button class="btn btn-custom btn-danger" type="button" ng-click="closeThisDialog()">Cancel</button>
+            <button class="btn btn-custom btn-primary" type="button" ng-click="saveCroppedImage()">Save</button>
+        </div>
+    </div>
+
+    <div class="row" ng-if="errorType">
+        <br/>
+        <span class="error-input col-md-12"> Invalid image type</span>
+    </div>
+</div>
