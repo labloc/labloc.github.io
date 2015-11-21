@@ -26,7 +26,6 @@
                     callback(user);
                 })
                 .catch(function (e) {
-                    console.log(e);
                     clearCredentials();
                 });
 
@@ -52,9 +51,16 @@
             delete $http.defaults.headers.common.Authorization;
         }
 
-        function setCredentials(user) {
+        function setCredentials(userObj) {
+            var user = {
+                username: userObj.username,
+                email: userObj.email,
+                roles: userObj.roles,
+                address: userObj.entrance + ' '+ userObj.block + ' '+userObj.floor + ' '+ userObj.apartment
+            }
+
             if (user) {
-                if(user.roles.indexOf('ROLE_ADMIN') !== -1){
+                if(user.roles.indexOf('ROLE_ADMINs') !== -1){
                     user.role = 'administrator';
                 } else {
                     user.role = 'owner';

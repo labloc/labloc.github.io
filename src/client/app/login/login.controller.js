@@ -6,7 +6,7 @@
         .controller('LoginController', LoginController);
 
     /* @ngInject */
-    function LoginController(authService, $cookies, $state, $rootScope) {
+    function LoginController(authService, $cookies, $state) {
         var vm = this;
         var user = $cookies.getObject('user');
 

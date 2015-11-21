@@ -37,7 +37,7 @@
                     controllerAs: 'vm',
                     title: 'Anunt',
                     settings: {
-                        nav: 1,
+                        nav: 2,
                         type:'administrator',
                         content: '<i class="mdi-editor-insert-comment"></i> Anunt'
                     }
