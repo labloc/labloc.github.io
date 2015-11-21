@@ -13,8 +13,8 @@
     }
 
     var config = {
-        appErrorPrefix: '[labloc Error] ',
-        appTitle: 'labloc'
+        appErrorPrefix: '[LaBloc Error] ',
+        appTitle: 'La Bloc'
     };
 
     core.value('config', config);

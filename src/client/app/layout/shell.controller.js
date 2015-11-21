@@ -14,14 +14,15 @@
         $rootScope.showSplash = true;
         vm.navline = {
             title: config.appTitle,
-            text: 'Created by John Papa',
-            link: 'http://twitter.com/john_papa'
+            text: 'Username',
+            link: '/profile'
         };
 
         activate();
 
         function activate() {
             logger.success(config.appTitle + ' loaded!', null);
+            $.material.init();
             hideSplash();
         }
 
