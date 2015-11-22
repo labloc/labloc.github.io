@@ -53,6 +53,7 @@
 
         function setCredentials(userObj) {
             var user = {
+                id: userObj.id,
                 username: userObj.username,
                 email: userObj.email,
                 roles: userObj.roles,

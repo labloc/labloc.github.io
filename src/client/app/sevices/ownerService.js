@@ -24,20 +24,25 @@
 
         }
 
-        function getIndex(){
-            return $http.get(config.apiUrl + '/index')
+        function getIndex(id){
+            return $http.get(config.apiUrl + '/users/' + id +'/consumptions', {
+                params: {
+                    limit: 100,
+                    offset: 0
+                }
+            })
                 .then(success)
                 .catch(fail);
         }
 
-        function addIndex(indexObj) {
-            return $http.post(config.apiUrl + '/index', indexObj)
+        function addIndex(id, indexObj) {
+            return $http.post(config.apiUrl + '/users/' + id +'/consumptions', indexObj)
                 .then(success)
                 .catch(fail);
         }
 
         function getConsumers(){
-            return $http.get(config.apiUrl + '/index/consumers')
+            return $http.get(config.apiUrl + '/consumer')
                 .then(success)
                 .catch(fail);
         }

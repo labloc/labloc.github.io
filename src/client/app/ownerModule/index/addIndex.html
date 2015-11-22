@@ -1,0 +1,26 @@
+<div>
+    <form class="" ng-submit="addIndex(index)">
+        <h2 class="col-sm-12">Adauga Index</h2>
+
+        <div class="col-sm-12">
+            <div class="form-group label-floating is-empty">
+                <label for="date" class="control-label">Data</label>
+                <input type="date" class="form-control" id="date" ng-model="index.date" required>
+            </div>
+        </div>
+
+        <div class="col-sm-6" ng-repeat="item in ngDialogData.consumers track by $index">
+            <div class="form-group label-floating is-empty">
+                <label for="{{::item.name}}" class="control-label">{{::item.name}}</label>
+                <input type="number" class="form-control" id="{{::item.name}}" ng-model="index.consume[item.id]">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-sm-12">
+                <button type="submit" class="btn btn-primary">TRIMITE</button>
+            </div>
+        </div>
+    </form>
+</div>
