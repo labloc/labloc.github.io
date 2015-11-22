@@ -96,7 +96,7 @@
                         }};
                         dataservice.owners.putIndex(id, conId, obj)
                             .then(function (res) {
-                                logger.success('Saved!');
+                                logger.success('Salavat!');
                                 $scope.closeThisDialog();
                             })
                             .catch(function (err) {

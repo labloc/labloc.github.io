@@ -17,7 +17,7 @@
             dataservice.admin.addNews(reqObj)
                 .then(function(res){
                     vm.news = {};
-                    logger.success('Saved!');
+                    logger.success('Salavat!');
                 })
                 .catch(function (err) {
                     if( err.data){

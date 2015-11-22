@@ -34,7 +34,7 @@
                         dataservice.admin.addUser(reqObj)
                             .then(function(res){
                                 $scope.owner = {};
-                                logger.success('Saved!');
+                                logger.success('Salavat!');
                                 $scope.closeThisDialog();
                             })
                             .catch(function (err) {

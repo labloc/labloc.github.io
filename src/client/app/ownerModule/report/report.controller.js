@@ -20,7 +20,7 @@
             dataservice.owners.addReport(reqObj)
                 .then(function(res){
                     vm.report = {};
-                    logger.success('Saved!');
+                    logger.success('Salavat!');
                 })
                 .catch(function (err) {
                     if( err.data){

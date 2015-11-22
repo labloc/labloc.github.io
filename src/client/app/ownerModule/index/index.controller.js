@@ -55,7 +55,7 @@
                     function makeRequest(obj){
                         dataservice.owners.addIndex(id, obj)
                             .then(function (res) {
-                                logger.success('Saved!');
+                                logger.success('Salavat!');
                             })
                             .catch(function (err) {
                                 if( err.data){
@@ -132,7 +132,7 @@
                         }};
                         dataservice.owners.putIndex(id, conId, obj)
                             .then(function (res) {
-                                logger.success('Saved!');
+                                logger.success('Salavat!');
                                 $scope.closeThisDialog();
                             })
                             .catch(function (err) {
