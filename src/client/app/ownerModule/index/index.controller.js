@@ -24,6 +24,7 @@
             var dialog = ngDialog.open({
                 template: 'app/ownerModule/index/addIndex.html',
                 data:{id: id, consumers: vm.consumers},
+                /* @ngInject */
                 controller: function ($scope, dataservice, logger, $timeout) {
                     $scope.index = {};
                     $scope.addIndex = addIndex;
@@ -110,6 +111,7 @@
             var dialog = ngDialog.open({
                 template: 'app/ownerModule/index/editIndex.html',
                 data:{id: id, con: con},
+                /* @ngInject */
                 controller: function ($scope, dataservice, logger) {
                     var id= $scope.ngDialogData.id;
                     $scope.index = $scope.ngDialogData.con;

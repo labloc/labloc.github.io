@@ -59,7 +59,7 @@
                 email: userObj.email,
                 roles: userObj.roles,
                 address: userObj.entrance + ' '+ userObj.block + ' '+userObj.floor + ' '+ userObj.apartment
-            }
+            };
 
             if (user) {
                 if(user.roles.indexOf('ROLE_ADMIN') !== -1){
