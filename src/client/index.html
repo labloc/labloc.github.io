@@ -31,9 +31,9 @@
     <!-- endinject -->
     <!-- endbuild -->
 </head>
-<body>
+<body ng-class="{'loginView':!loggedUser}">
     <div>
-        <div ng-include="'app/layout/shell.html'"></div>
+        <div ng-include="'app/layout/shell.html'" ></div>
         <div id="splash-page" ng-show="showSplash">
             <div class="page-splash">
                 <div class="page-splash-message">

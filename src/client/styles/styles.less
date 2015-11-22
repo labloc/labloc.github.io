@@ -5,9 +5,10 @@
 @color_important: #f44336;
 @color_violet: #932ab6;
 
-@light-grey: #e0e0e0;
+@light-grey: #f5f7fa;
 @dark-grey: #616161;
-@grey: #9e9e9e;
+@grey: #e6e9ed;
+
 * {
     /*-webkit-box-shadow: none !important;
     -ms-box-shadow: none !important;
@@ -1289,24 +1290,6 @@ form {
 
 /*#endregion */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*#region Override background color theme */
 
 /*For Bootstrap 3*/
@@ -1966,6 +1949,7 @@ a {
     z-index: 60;
     background-color: @light-grey;
     height: 43px;
+    border-bottom: 2px solid @grey;
 }
 
 .nav-submenu hr {
@@ -1988,14 +1972,15 @@ a {
         display: inline-block;
         font-size: 13px;
         font-weight: 900;
-        line-height: 25px;
+        line-height: 20px;
 
         &:hover,
         &.current {
             background-color: @grey;
+            border-bottom: 2px solid @dark-grey;
 
             a {
-                color: @light-grey;
+                color: @dark-grey;
             }
         }
     }
@@ -2019,6 +2004,10 @@ a {
 .centered{
     max-width: 970px;
     margin: 0 auto;
+}
+
+.loginView{
+    background-color: @grey;
 }
 
 /*#endregion */
