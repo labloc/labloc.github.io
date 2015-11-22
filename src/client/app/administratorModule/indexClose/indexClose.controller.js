@@ -15,6 +15,7 @@
         vm.displayMonth = vm.monthsList[moment(currentMonth).month()];
         vm.changeMonth = changeMonth;
         vm.closeMonth = closeMonth;
+        vm.editModal = editModal;
 
         getAllIndex(currentMonth);
 
@@ -56,6 +57,45 @@
                                 $scope.closeThisDialog();
                             })
                             .catch(function (err){
+                                logger.error(err);
+                            });
+                    }
+                }
+            });
+
+            dialog.closePromise.then(function () {
+                getAllIndex(currentMonth);
+            });
+        }
+
+        function editModal(con){
+            var dialog = ngDialog.open({
+                template: 'app/ownerModule/index/editIndex.html',
+                data:{id: con.user_id, con: con},
+                controller: function ($scope, dataservice, logger) {
+                    var id= $scope.ngDialogData.id;
+                    $scope.index = $scope.ngDialogData.con;
+                    var conId = $scope.index.id;
+                    $scope.index.new = {
+                        month: new Date($scope.index.month),
+                        index: parseInt($scope.index.index),
+                        consumer: parseInt($scope.index.consumer.id)
+                    };
+
+                    $scope.saveIndex = saveIndex;
+
+                    function saveIndex(index) {
+                        var obj= {consumption: {
+                            month: moment(index.month),
+                            index: parseInt(index.index),
+                            consumer: parseInt($scope.index.consumer.id)
+                        }};
+                        dataservice.owners.putIndex(id, conId, obj)
+                            .then(function (res) {
+                                logger.success('Saved!');
+                                $scope.closeThisDialog();
+                            })
+                            .catch(function (err) {
                                 logger.error(err);
                             });
                     }

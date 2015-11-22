@@ -10,6 +10,7 @@
         var service = {
             addReport: addReport,
             addIndex: addIndex,
+            putIndex: putIndex,
             getIndex: getIndex,
             getConsumers: getConsumers,
             getNews: getNews
@@ -37,6 +38,12 @@
 
         function addIndex(id, indexObj) {
             return $http.post(config.apiUrl + '/users/' + id +'/consumptions', indexObj)
+                .then(success)
+                .catch(fail);
+        }
+
+        function putIndex(id, conId, reqObj) {
+            return $http.put(config.apiUrl + '/users/' + id +'/consumptions/'+conId, reqObj)
                 .then(success)
                 .catch(fail);
         }

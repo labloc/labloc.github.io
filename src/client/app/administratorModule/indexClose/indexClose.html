@@ -31,7 +31,7 @@
                             <td>{{::item.user.username}}</td>
                             <td>{{::item.consumer.name}}</td>
                             <td>{{::item.index}}</td>
-                            <td class="link"><span class="label label-success"><i class="mdi-editor-mode-edit"></i>Modifica</span></td>
+                            <td class="link" ng-click="vm.editModal(item)"><span class="label label-success"><i class="mdi-editor-mode-edit"></i>Modifica</span></td>
                         </tr>
                         </tbody>
                     </table>
