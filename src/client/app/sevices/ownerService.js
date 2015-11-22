@@ -55,7 +55,11 @@
         }
 
         function getNews(){
-            return $http.get(config.apiUrl + '/news')
+            return $http.get(config.apiUrl + '/news', {
+                params:{
+                    sort: 'DESC'
+                }
+            })
                 .then(success)
                 .catch(fail);
         }
