@@ -1,6 +1,6 @@
 <nav class="navbar navbar-fixed-top navbar-warning">
     <div class="navbar-header">
-        <a href="/" class="navbar-brand"><span class="brand-title">{{vm.navline.title}}</span></a>
+        <a href="/" class="navbar-brand"><span class="brand-title">La Bloc</span></a>
         <a class="btn navbar-btn navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -11,8 +11,8 @@
         <div class="pull-right navbar-logo">
             <ul class="nav navbar-nav pull-right">
                 <li>
-                    <a ng-href="{{vm.navline.link}}" ng-click="vm.clearUser()">
-                        {{vm.navline.text}}
+                    <a ng-href="/login" ng-click="vm.clearUser()">
+                        {{loggedUser.name}}
                     </a>
                 </li>
             </ul>

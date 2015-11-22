@@ -24,7 +24,7 @@
             var dialog = ngDialog.open({
                 template: 'app/ownerModule/index/addIndex.html',
                 data:{id: id, consumers: vm.consumers},
-                controller: function ($scope, dataservice, logger) {
+                controller: function ($scope, dataservice, logger, $timeout) {
                     $scope.index = {};
                     $scope.addIndex = addIndex;
                     var id= $scope.ngDialogData.id;
@@ -46,8 +46,9 @@
                             makeRequest(request);
                         });
 
-                        $scope.closeThisDialog();
-
+                        $timeout(function(){
+                            $scope.closeThisDialog();
+                        }, 2000);
                     }
 
                     function makeRequest(obj){
@@ -93,7 +94,13 @@
                         if (item.month) {
                             item.monthNumber = moment(item.month).month();
                         }
-                    });
+                    }).catch(function (err) {
+                        if( err.data){
+                            logger.error(err.data[0]);
+                        } else {
+                            logger.error(err);
+                        }
+                    });;
                     vm.consumptions = res.consumption;
                 });
 

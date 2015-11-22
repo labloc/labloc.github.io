@@ -28,7 +28,7 @@
                         </thead>
                         <tbody>
                         <tr class="text-center" ng-repeat="item in vm.consumptions">
-                            <td>{{::item.user.username}}</td>
+                            <td>{{::item.user.name}}</td>
                             <td>{{::item.consumer.name}}</td>
                             <td>{{::item.index}}</td>
                             <td class="link" ng-click="vm.editModal(item)"><span class="label label-success"><i class="mdi-editor-mode-edit"></i>Modifica</span></td>

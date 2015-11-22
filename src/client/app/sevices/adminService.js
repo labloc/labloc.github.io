@@ -22,7 +22,7 @@
             return $http.get(config.apiUrl + '/reports',{
                 params: {
                     limit: 100,
-                    offset: 4
+                    offset: 0
                 }
             } )
                 .then(success)

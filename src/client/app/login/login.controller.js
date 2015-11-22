@@ -6,7 +6,7 @@
         .controller('LoginController', LoginController);
 
     /* @ngInject */
-    function LoginController(authService, $cookies, $state) {
+    function LoginController(authService, $cookies, $state, $rootScope) {
         var vm = this;
         var user = $cookies.getObject('user');
 
@@ -18,7 +18,7 @@
         function login() {
             authService.login(vm.username, vm.password, function (res){
                 if (res){
-                    routeUser(res);
+                    routeUser($rootScope.loggedUser);
                 }
             });
         }

@@ -21,7 +21,9 @@
                     newMessage = message + thrownDescription;
                 }
                 e.data.description = newMessage;
-                logger.error(newMessage);
+                if (newMessage){
+                    logger.error(newMessage);
+                }
                 return $q.reject(e);
             };
         }

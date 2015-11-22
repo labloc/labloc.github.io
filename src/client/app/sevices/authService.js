@@ -22,7 +22,6 @@
             $http.get(config.apiUrl + '/login')
                 .then(function (res) {
                     var user = res.data;
-                    console.log(user);
                     setCredentials(user);
                     callback(user);
                 })
