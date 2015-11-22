@@ -82,7 +82,6 @@
                             item.monthNumber = moment(item.month).month();
                         }
                     });
-                    console.log(res.consumption);
                     vm.consumptions = res.consumption;
                 });
 

@@ -22,7 +22,7 @@
                         <tbody>
                         <tr ng-repeat="report in vm.reports track by $index">
                             <td>{{ ::report.id}}</td>
-                            <td>{{ ::report.createdAt}}</td>
+                            <td>{{ ::report.created_at | date:'medium'}}</td>
                             <td>{{ ::report.user.email || 'anonim'}}</td>
                             <td>{{ ::report.type}}</td>
                             <td>{{ ::report.title}}</td>

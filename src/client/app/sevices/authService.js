@@ -22,6 +22,7 @@
             $http.get(config.apiUrl + '/login')
                 .then(function (res) {
                     var user = res.data;
+                    console.log(user);
                     setCredentials(user);
                     callback(user);
                 })
@@ -55,6 +56,7 @@
             var user = {
                 id: userObj.id,
                 username: userObj.username,
+                name: userObj.name,
                 email: userObj.email,
                 roles: userObj.roles,
                 address: userObj.entrance + ' '+ userObj.block + ' '+userObj.floor + ' '+ userObj.apartment

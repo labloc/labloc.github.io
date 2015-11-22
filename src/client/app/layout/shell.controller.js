@@ -9,13 +9,13 @@
     function ShellController($rootScope, $timeout, config, logger, $cookies, $state, authService) {
         var vm = this;
         var auth = $cookies.get('loggedIn');
-        vm.busyMessage = 'Please wait ...';
+        vm.busyMessage = 'Se incarca ...';
         vm.isBusy = true;
         $rootScope.showSplash = true;
         $rootScope.loggedUser = $cookies.getObject('user');
         vm.navline = {
             title: config.appTitle,
-            text: ($rootScope.loggedUser)?$rootScope.loggedUser.username : '--',
+            text: ($rootScope.loggedUser)?$rootScope.loggedUser.name : '--',
             link: '/login'
         };
 

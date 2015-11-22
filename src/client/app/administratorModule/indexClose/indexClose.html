@@ -1,0 +1,42 @@
+<section id="adminIndex-view">
+    <section class="matter centered">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Lista indecsi declarati</h2>
+                </div>
+                <div class="col-md-6 pull-right month-nav">
+                    <div class="pull-right">
+                        <i class="mdi-navigation-chevron-left link" ng-click="vm.changeMonth(-1)"></i>
+                        <h4> {{vm.displayMonth}} </h4>
+                        <i class="mdi-navigation-chevron-right link" ng-click="vm.changeMonth(1)"></i>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <button type="button" class="btn btn-sm btn-danger pull-right" ng-click="vm.closeMonth()">Inchide luna
+                    </button>
+
+                    <br/>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th>Locatar</th>
+                            <th>Consumator</th>
+                            <th>Index declarat</th>
+                            <th>Actiune</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="text-center" ng-repeat="item in vm.consumptions">
+                            <td>{{::item.user.username}}</td>
+                            <td>{{::item.consumer.name}}</td>
+                            <td>{{::item.index}}</td>
+                            <td class="link"><span class="label label-success"><i class="mdi-editor-mode-edit"></i>Modifica</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

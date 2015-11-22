@@ -57,6 +57,21 @@
                         content: '<i class="mdi-action-description"></i> Sesizari'
                     }
                 }
+            },
+            {
+                state: 'administrator-index',
+                config: {
+                    url: '/admin/index',
+                    templateUrl: 'app/administratorModule/indexClose/indexClose.html',
+                    controller: 'IndexCloseController',
+                    controllerAs: 'vm',
+                    title: 'Indecsi declarati',
+                    settings: {
+                        nav: 4,
+                        type:'administrator',
+                        content: '<i class="mdi-av-subtitles"></i> Indecsi Declarati'
+                    }
+                }
             }
         ];
     }
