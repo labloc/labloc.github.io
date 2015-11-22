@@ -9,7 +9,7 @@
     function ShellController($rootScope, $timeout, config, logger, $cookies, $state, authService) {
         var vm = this;
         var auth = $cookies.get('loggedIn');
-        vm.busyMessage = 'Se incarca ...';
+        vm.busyMessage = '...';
         vm.isBusy = true;
         $rootScope.showSplash = true;
         $rootScope.loggedUser = $cookies.getObject('user');
