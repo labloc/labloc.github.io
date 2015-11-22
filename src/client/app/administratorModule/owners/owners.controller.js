@@ -37,8 +37,12 @@
                                 logger.success('Saved!');
                                 $scope.closeThisDialog();
                             })
-                            .catch(function (err){
-                                logger.error(err);
+                            .catch(function (err) {
+                                if( err.data){
+                                    logger.error(err.data[0]);
+                                } else {
+                                    logger.error(err);
+                                }
                             });
                     }
                 }

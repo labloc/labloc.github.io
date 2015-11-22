@@ -56,7 +56,11 @@
                                 logger.success('Saved!');
                             })
                             .catch(function (err) {
-                                logger.error(err);
+                                if( err.data){
+                                    logger.error(err.data[0]);
+                                } else {
+                                    logger.error(err);
+                                }
                             });
                     }
                 }
@@ -72,7 +76,14 @@
                 .then(function (res) {
                     vm.consumers = res.consumer;
                     getIndexHistory();
-                });
+                })
+                .catch(function (err) {
+                    if( err.data){
+                        logger.error(err.data[0]);
+                    } else {
+                        logger.error(err);
+                    }
+                });;
         }
 
         function getIndexHistory() {
@@ -116,7 +127,11 @@
                                 $scope.closeThisDialog();
                             })
                             .catch(function (err) {
-                                logger.error(err);
+                                if( err.data){
+                                    logger.error(err.data[0]);
+                                } else {
+                                    logger.error(err);
+                                }
                             });
                     }
                 }
