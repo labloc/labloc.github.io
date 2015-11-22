@@ -95,15 +95,16 @@
                         if (item.month) {
                             item.monthNumber = moment(item.month).month();
                         }
-                    }).catch(function (err) {
-                        if( err.data){
-                            logger.error(err.data[0]);
-                        } else {
-                            logger.error(err);
-                        }
-                    });;
+                    });
                     vm.consumptions = res.consumption;
-                });
+                })
+                .catch(function (err) {
+                    if( err.data){
+                        logger.error(err.data[0]);
+                    } else {
+                        logger.error(err);
+                    }
+                });;
 
         }
 
