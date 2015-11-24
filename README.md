@@ -5,4 +5,7 @@ Demo accounts
 
 Admin user: admin_demo / demo 
 
-Owner user: locatar_demo / demo
+Owner user: demo_locatar / demo
+
+
+In progress: Upload files and pictures for Reports and News.
