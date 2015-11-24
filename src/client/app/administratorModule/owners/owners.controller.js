@@ -24,6 +24,7 @@
         function openModal() {
             var dialog = ngDialog.open({
                 template: 'app/administratorModule/owners/addOwner.html',
+                /* @ngInject */
                 controller: function ($scope, dataservice, logger) {
                     $scope.owner = {};
                     $scope.addOwner = addOwner;

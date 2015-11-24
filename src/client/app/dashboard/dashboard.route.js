@@ -16,15 +16,15 @@
             {
                 state: 'dashboard',
                 config: {
+                    url: '',
+                    controller: 'DashboardController'
+                }
+            },
+            {
+                state: 'dashboard-slash',
+                config: {
                     url: '/',
-                    templateUrl: 'app/dashboard/dashboard.html',
-                    controller: 'DashboardController',
-                    controllerAs: 'vm',
-                    title: 'dashboard',
-                    settings: {
-                        nav: 1,
-                        content: '<i class="fa fa-dashboard"></i> Dashboard'
-                    }
+                    controller: 'DashboardController'
                 }
             }
         ];

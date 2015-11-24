@@ -44,6 +44,7 @@
             var dialog = ngDialog.open({
                 template: 'app/administratorModule/indexClose/closeMonth.html',
                 data: {month: currentMonth, displayMonth: vm.displayMonth},
+                /* @ngInject */
                 controller: function ($scope, dataservice, logger) {
 
                     $scope.closeMonth = closeMonth;
@@ -76,6 +77,7 @@
             var dialog = ngDialog.open({
                 template: 'app/ownerModule/index/editIndex.html',
                 data:{id: con.user_id, con: con},
+                /* @ngInject */
                 controller: function ($scope, dataservice, logger) {
                     var id= $scope.ngDialogData.id;
                     $scope.index = $scope.ngDialogData.con;

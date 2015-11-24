@@ -6,7 +6,7 @@
         .factory('authService', authService);
 
     /* @ngInject */
-    function authService($cookies, $rootScope, $http, config) {
+    function authService($cookies, $rootScope, $http, config, logger) {
         var service = {
             login: login,
             setCredentials: setCredentials,
@@ -25,7 +25,10 @@
                     setCredentials(user);
                     callback(user);
                 })
-                .catch(function (e) {
+                .catch(function (err) {
+                    if( err.status == 401){
+                        logger.error('Utilizator sau parola incorecta!');
+                    }
                     clearCredentials();
                 });
 
@@ -42,6 +45,7 @@
         function setAuthHeader(authData){
             $http.defaults.headers.common.Authorization = 'Basic '+ authData;
             $http.defaults.headers.common['Accept'] = 'application/json';
+            $http.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
         }
 
         function clearCredentials() {

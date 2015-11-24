@@ -16,7 +16,7 @@
         vm.navline = {
             title: config.appTitle,
             text: ($rootScope.loggedUser)?$rootScope.loggedUser.name : '--',
-            link: '/login'
+            link: '/#/login'
         };
 
         activate();
