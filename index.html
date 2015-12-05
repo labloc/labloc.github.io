@@ -6,40 +6,33 @@
         /* Since Angular has this but needs to load, this gives us the class early. */
         .ng-hide { display: none!important; }
     </style>
-    <title ng-bind="title">La Bloc</title>
+    <title>LaBloc App</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
     <base href="/">
 
-    <link rel="stylesheet" href="styles/lib-de7e1f1cd6.css">
+    <link rel="stylesheet" href="styles/lib-476bfdf7d9.css">
 
-    <link rel="stylesheet" href="styles/app-81d6c84c68.css">
+    <link rel="stylesheet" href="styles/app-07c47ff238.css">
 </head>
-<body ng-class="{'loginView':!loggedUser}">
+<body class="background-image">
     <div>
-        <div ng-include="'app/layout/shell.html'" ></div>
-        <div id="splash-page" ng-show="showSplash">
-            <div class="page-splash">
-                <div class="page-splash-message">
-                    Se incarca aplicatia..
-                </div>
-            </div>
-        </div>
+        <div ng-include="'app/layout/shell.html'"></div>
     </div>
 
-    <script src="js/lib-45431fb8e8.js"></script>
+    <script src="js/lib-8a2f5599b8.js"></script>
 
-    <script src="js/app-c51d06a3ac.js"></script>
-
+    <script src="js/app-54fa68c9cf.js"></script>
+    <script async="" src="//www.google-analytics.com/analytics.js"></script>
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-70822873-1', 'auto');
-      ga('send', 'pageview');
+        ga('create', 'UA-70822873-1', 'auto');
+        ga('send', 'pageview');
 
     </script>
 </body>
